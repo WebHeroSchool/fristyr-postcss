@@ -51,7 +51,7 @@ gulp.task('css', () => {
     const plugins = [];
     return gulp.src([paths.src.styles])
         .pipe(sourcemaps.init())
-        .pipe(postcss())
+            .pipe(postcss())
             .pipe(concat(paths.buildNames.styles))
             .pipe(gulpif(process.env.NODE_ENV === 'production', cssnano()))
         .pipe(sourcemaps.write())
